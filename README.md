@@ -1,6 +1,15 @@
 # shopping-cart
 Shopping Cart Project
 
+Project Description: https://github.com/prof-rossetti/intro-to-python/tree/master/projects/shopping-cart
 
-This project seeks to create a virtual "shopping cart" for usage in Holliday Farms, a local grocery store. The appropriate environment for this python file to be run is shopping-env.
+## Installation
+Download this file from "source", then open the project repository
+
+cd shopping-cart
+
+### Use
+
+Run the program: python shopping_cart.py
+
 

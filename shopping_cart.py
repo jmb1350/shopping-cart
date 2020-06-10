@@ -1,6 +1,14 @@
 
 
 # shopping_cart.py
+
+##Information Input
+selected_id = input("Please input a product code: ")
+print(selected_id)
+print(type(selected_id))
+
+
+# Information Display
 print("------------------------------")
 print("Holliday Farms Grocery Store")
 print("------------------------------")
