@@ -1,6 +1,15 @@
 
 
 # shopping_cart.py
+print("------------------------------")
+print("Holliday Farms Grocery Store")
+print("------------------------------")
+print("")
+
+print("Web: www.hollidayfarms.com")
+print("Phone: (516) 625-6677")
+print("")
+print("")
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
