@@ -13,3 +13,4 @@ cd shopping-cart
 Run the program: python shopping_cart.py
 
 
+conda activate shopping-env

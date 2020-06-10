@@ -2,13 +2,14 @@
 
 # shopping_cart.py
 
-##Information Input
-selected_id = input("Please input a product code: ")
-print(selected_id)
-print(type(selected_id))
+
+
+
+
 
 
 # Information Display
+print("")
 print("------------------------------")
 print("Holliday Farms Grocery Store")
 print("------------------------------")
@@ -56,4 +57,17 @@ def to_usd(my_price):
 
 # TODO: write some Python code here to produce the desired output
 
-print(products)
+
+
+##Information Input
+selected_id = input("Please input a product code: ")
+matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
+matching_product = matching_products[0]
+
+print(matching_product)
+print(type(matching_product))
+
+
+
+
+
