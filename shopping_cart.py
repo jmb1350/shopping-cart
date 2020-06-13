@@ -56,7 +56,7 @@ while True:
                 matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
                 matching_product = matching_products[0]
                 total_price = total_price + matching_product["price"]
-                print("Selected Product: " + matching_product["name"] + " " + str(matching_product["price"]))
+                
                 selected_ids.append(selected_id)
 
 
