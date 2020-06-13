@@ -8,19 +8,12 @@ import datetime
 #https://www.programiz.com/python-programming/datetime/current-datetime
 #https://stackabuse.com/how-to-format-dates-in-python/
 
-
-
 def to_usd(my_price):
-    """
-    Converts a numeric value to usd-formatted string, for printing and display purposes.
-    
-    Param: my_price (int or float) like 4000.444444
-    
-    Example: to_usd(4000.444444)
-    
-    Returns: $4,000.44
-    """
-    return f"${my_price:,.2f}" #> $12,000.71
+    return f"${my_price:,.2f}" 
+
+
+
+
 
 
 # Information Display
@@ -50,9 +43,9 @@ products = [
     # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
 
-   
+total_price = 0   
 
-total_price = 0
+
 selected_ids = []
 
 while True:
@@ -89,11 +82,13 @@ print("------------------------------")
 
 print("Selected Products:")
 print("------------------------------")
+
+
 for selected_id in selected_ids:
         matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
         matching_product = matching_products[0]
         total_price = total_price + matching_product["price"]
-        print("..." + matching_product["name"] + " " + str(matching_product["price"]))
+        print("..." + matching_product["name"] + " " + to_usd(matching_product["price"]))
 
 print("------------------------------")
 print("")
@@ -102,9 +97,9 @@ sales_tax = .0875 * total_price
 net_total = total_price + sales_tax
 
         
-print("Subtotal " + str(total_price))
-print("Tax " + str(sales_tax))
-print("Total " + str(net_total))
+print("Subtotal: " + to_usd(total_price))
+print("Tax: " + to_usd(sales_tax))
+print("Total: " + to_usd(net_total))
 
 
 
