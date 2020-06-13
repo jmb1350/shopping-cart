@@ -3,7 +3,7 @@
 # shopping_cart.py
 
 
-import datetime
+from datetime import datetime
 
 #https://www.programiz.com/python-programming/datetime/current-datetime
 #https://stackabuse.com/how-to-format-dates-in-python/
@@ -49,7 +49,10 @@ total_price = 0
 selected_ids = []
 
 while True:
-        selected_id = input("Please input a product code: ")
+        try:
+                selected_id = input("Please input a product code: ")
+        except (IndexError):
+                print("Please input a valid product code:")
         if selected_id == "DONE": 
                 break   
         else:
@@ -75,7 +78,7 @@ print("------------------------------")
 
 
 print()
-now = datetime.datetime(2019, 9, 15, 12 , 45, 35)
+now = datetime.now()
 print("Checkout Time:", now.strftime("%b %d %Y %H:%M:%S %p"))
 print("")
 print("------------------------------")
