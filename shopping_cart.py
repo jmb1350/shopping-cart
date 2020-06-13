@@ -3,22 +3,28 @@
 # shopping_cart.py
 
 
+import datetime
+
+#https://www.programiz.com/python-programming/datetime/current-datetime
+#https://stackabuse.com/how-to-format-dates-in-python/
 
 
 
+def to_usd(my_price):
+    """
+    Converts a numeric value to usd-formatted string, for printing and display purposes.
+    
+    Param: my_price (int or float) like 4000.444444
+    
+    Example: to_usd(4000.444444)
+    
+    Returns: $4,000.44
+    """
+    return f"${my_price:,.2f}" #> $12,000.71
 
 
 # Information Display
-print("")
-print("------------------------------")
-print("Holliday Farms Grocery Store")
-print("------------------------------")
-print("")
 
-print("Web: www.hollidayfarms.com")
-print("Phone: (516) 625-6677")
-print("")
-print("")
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -43,17 +49,8 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}] 
     # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
-def to_usd(my_price):
-   # """
-    #Converts a numeric value to usd-formatted string, for printing and display purposes.
 
-    #Param: my_price (int or float) like 4000.444444
-
-    #Example: to_usd(4000.444444)
-
-    #Returns: $4,000.44
-    #"""
-    return f("${my_price:,.2f}") #> $12,000.71
+   
 
 total_price = 0
 selected_ids = []
@@ -72,15 +69,51 @@ while True:
 
 #print(selected_ids)
 
+print("")
+print("------------------------------")
+print("Holliday Farms Grocery Store")
+print("------------------------------")
+print("")
+
+print("Web: www.hollidayfarms.com")
+print("Phone: (516) 625-6677")
+print("")
+print("------------------------------")
+
+
+print()
+now = datetime.datetime(2019, 9, 15, 12 , 45, 35)
+print("Checkout Time:", now.strftime("%b %d %Y %H:%M:%S %p"))
+print("")
+print("------------------------------")
+
+print("Selected Products:")
+print("------------------------------")
 for selected_id in selected_ids:
         matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
         matching_product = matching_products[0]
         total_price = total_price + matching_product["price"]
-        print("Selected Product: " + matching_product["name"] + " " + str(matching_product["price"]))
+        print("..." + matching_product["name"] + " " + str(matching_product["price"]))
 
-#Display total price of products chosen
-print("Total Price: " + str(total_price))
-#make sure to format as USD
+print("------------------------------")
+print("")
+
+sales_tax = .0875 * total_price
+net_total = total_price + sales_tax
+
+        
+print("Subtotal " + str(total_price))
+print("Tax " + str(sales_tax))
+print("Total " + str(net_total))
+
+
+
+print("")
+print("------------------------------")
+print("Thanks, see you again soon!")
+print("------------------------------")
+print("")
+print("")
 
 
 
