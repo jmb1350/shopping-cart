@@ -48,20 +48,24 @@ total_price = 0
 
 selected_ids = []
 
+#while(symbol.isalpha() < 1 or len(selected_ids > 20))
+       # selected_id = selected_id = input("Please input a product code: ")
+
 while True:
         try:
                 selected_id = input("Please input a product code: ")
-        except (IndexError):
-                print("Please input a valid product code:")
+                matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
+                matching_product = matching_products[0] # this is the line that will trigger the IndexError
+                total_price = total_price + matching_product["price"]
+                selected_ids.append(selected_id) 
+                
+        except (IndexError, ValueError):
+                print("Invalid product code. Please try again:")        
         if selected_id == "DONE": 
                 break   
-        else:
-                matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
-                matching_product = matching_products[0]
-                total_price = total_price + matching_product["price"]
-                
-                selected_ids.append(selected_id)
-
+        
+        
+                       
 
 #print(selected_ids)
 
